@@ -12,3 +12,7 @@ h1 {
 .image {
 	float: right;
 }
+
+aside {
+	padding: 30px;
+}
