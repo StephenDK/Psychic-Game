@@ -9,34 +9,45 @@ var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 // variables for the wins, loses, guesses-left.
 var wins = 0;
 var losses = 0;
-
+var guessesLeft = 10;
 
 
 //This function is run whenever the user presses a key.
 document.onkeyup = function() {
 
-	//Users key choice
+//Users key choice
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 	console.log(userGuess);
 
-	// Computers options choice
+// Show users choice on index.html
+	// var playerChoice = document.getElementById("users-Guess");
+	// playerChoice.textContent = userGuess;
+
+// Computers options choice
 	var computerGuess = options[Math.floor(Math.random() * options.length)];
 
 	console.log(computerGuess);
 
-	// Conditions 
+// If the user choice is equal to the computers choice.
 	if (userGuess === computerGuess) {
 		console.log("great");
+		wins++;
 	} else {
 		console.log("wrong");
+		losses++;
+		guessesLeft--;
 	}
+
+
+var html = "<p>Players choice: " + userGuess + "</p>" +
+"<p>Wins: " + wins + "</p>" +
+"<p>Losses: " + losses + "</p>" +
+"<p>Guesses left: " + guessesLeft + "</p>";
+
+document.querySelector('#game').innerHTML = html;
+
 }
-
-
-
-
-
 
 
 
