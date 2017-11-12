@@ -1,5 +1,5 @@
 // Game intro and instructions
-//alert("Welcome to the abra psychic game. Guess what letter abra is thinking about?");
+alert("Welcome to the abra psychic game. Guess what letter abra is thinking about?");
 
 
 //Array of choices for the computer.
@@ -30,13 +30,13 @@ document.onkeyup = function() {
 
 	console.log(userGuess);
 
-// 
+
 // Show users selection on index.html
 	var targetSpan = document.getElementById("users-Guess");
 	
 	var newSpan = document.createElement("span");
 
-
+//Create new spans for each user slection and display with innerHTML.
 	newSpan.innerHTML = userGuess;
 	targetSpan.appendChild(newSpan);
 
@@ -51,6 +51,8 @@ document.onkeyup = function() {
 // If the user choice is equal to the computers choice conditions.
 	if (userGuess === computerGuess) {
 		console.log("great");
+		// abra evolves when user wins
+		document.getElementById("image").setAttribute("src", "assets/images/64-Kadabra.png");
 		wins++;
 	} else {
 		console.log("wrong");
